@@ -12,11 +12,19 @@
         <% if (task==null) { %>
         <form action="/create" method="post">
             <input type="text" name="tarefa" id="tarefa" placeholder="Nome do Aluno">
+            <input type="number" name="cpf" id="cpf" placeholder="CPF do aluno">
+            <input type="number" name="matricula" id="matricula" placeholder="Número da matricula">
+            <input type="number" name="rg" id="rg" placeholder="RG do aluno">
+            <input type="text" name="endereco" id="endereco" placeholder="Endereço">
             <button id="adicionarTarefa" type="submit">Adicionar</button>
         </form>
         <% } else {  %>  
         <form action="/updateOne/<%= task._id %>" method="post">
             <input type="text" name="tarefa" id="tarefa" value="<%= task.tarefa %>">
+            <input type="number" name="cpf" id="cpf" value="<%= task.cpf %>">
+            <input type="number" name="matricula" id="matricula" value="<%= task.matricula%>">
+            <input type="number" name="rg" id="rg" value="<%= task.rg%>">
+            <input type="endereco" name="endereco" id="endereco" value="<%= task.endereco %>">
             <button id="adicionarTarefa" type="submit">Atualizar</button>
         </form>
         <%  } %>
@@ -25,7 +33,8 @@
         <ul>
             <% tasksList.forEach((task)=> { %>
                 <li>
-                    <%= task.tarefa %> | <%= task.date.toLocaleDateString('pt-BR') %>
+                   nome: <%= task.tarefa %> | cpf: <%= task.cpf %> |
+                   numeroMatricula: <%= task.matricula%> | RG: <%= task.rg%> | Endereço: <%= task.endereco %>
                     <a href="/getById/<%=task._id %>/update">Editar</a>
                     <a href="/getById/<%=task._id %>/delete">Apagar</a>
                 </li>

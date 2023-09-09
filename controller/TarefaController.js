@@ -11,7 +11,13 @@ const getAllTarefa = async (req, res) => {
 };
 
 const createTarefa = async (req, res) => {
-    const tarefa = req.body;
+    const tarefa = {
+        tarefa: req.body.tarefa,
+        cpf: req.body.cpf,
+        matricula: req.body.matricula,
+        rg:req.body.rg,
+        endereco: req.body.endereco
+    }
 
     if(!tarefa.tarefa){
         return res.redirect("/")
