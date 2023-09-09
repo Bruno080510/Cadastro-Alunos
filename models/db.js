@@ -1,17 +1,12 @@
 const mongoose = require('mongoose')
 
-const connectToDb = () => {
-    mongoose.connect(
-        "mongodb+srv://brunoleal:bruno2005@cluster0.xcvtpv2.mongodb.net/?retryWrites=true&w=majority",
-        {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        }
-    ).then(() => {
-        console.log("MongDB Atlas connected...")
-    }).catch((err) => {
-        console.log(err)
-    })
+require("dotenv").config()
+mongoose.set("strictQuery", true)
+
+const connectToDb = async () => {
+   await mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.xcvtpv2.mongodb.net/?retryWrites=true&w=majority`)
+    .then(() => console.log("MongDB Atlas conectado!!"))
+    .catch((err) => console.log(err))
 }
 
 module.exports = connectToDb;
