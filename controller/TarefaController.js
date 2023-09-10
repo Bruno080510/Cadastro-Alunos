@@ -1,4 +1,5 @@
 const Tarefa = require("../models/Tarefa")
+const path = require("path")
 
 const getAllTarefa = async (req, res) => {
     try{
@@ -12,13 +13,14 @@ const getAllTarefa = async (req, res) => {
 
 
 const createTarefa = async (req, res) => {
+    const file= req.file
     const tarefa = {
         tarefa: req.body.tarefa,
         cpf: req.body.cpf,
         matricula: req.body.matricula,
         rg:req.body.rg,
         endereco: req.body.endereco,
-        file: req.body.file
+        file: file.path
     }
 
     if(!tarefa.tarefa){

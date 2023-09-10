@@ -1,5 +1,6 @@
 const routes = require("express").Router();
 const TaskController = require("../controller/TarefaController");
+
 const multer = require("multer")
 
 const storage = multer.diskStorage({
@@ -13,9 +14,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage})
 
-
 routes.get("/", TaskController.getAllTarefa);
-routes.post("/create", upload.single("file"),TaskController.createTarefa)
+routes.post("/create", upload.single("file"), TaskController.createTarefa)
 routes.get("/getById/:id/:method", TaskController.getById)
 routes.post("/updateOne/:id", TaskController.updateOneTask)
 routes.get("/deleteOne/:id/", TaskController.deleteOneTask)
