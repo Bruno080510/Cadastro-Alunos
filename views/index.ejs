@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>To do list</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <title>To do list</title>
 </head>
 <body>
-
+    
     <header>
+        <% if(message != ""){ %>
+        <div class="alert alert-<%= type %>" role="alert">
+            <p><%= message %></p>
+            <span>x</span>
+        </div>
+        <% } %>
         <% if (task==null) { %>
         <form action="/create" method="post" enctype="multipart/form-data">
-            <input type="text" name="tarefa" id="tarefa" placeholder="Nome do Aluno">
+            <input class="form-control" type="text" name="tarefa" id="tarefa" placeholder="Nome do Aluno">
             <input type="number" name="cpf" id="cpf" placeholder="CPF do aluno">
             <input type="number" name="matricula" id="matricula" placeholder="Número da matricula">
             <input type="number" name="rg" id="rg" placeholder="RG do aluno">
@@ -57,6 +63,7 @@
     </section>
    <% } %>
 
+   <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
