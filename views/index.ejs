@@ -10,12 +10,13 @@
 
     <header>
         <% if (task==null) { %>
-        <form action="/create" method="post">
+        <form action="/create" method="post" enctype="multipart/form-data">
             <input type="text" name="tarefa" id="tarefa" placeholder="Nome do Aluno">
             <input type="number" name="cpf" id="cpf" placeholder="CPF do aluno">
             <input type="number" name="matricula" id="matricula" placeholder="Número da matricula">
             <input type="number" name="rg" id="rg" placeholder="RG do aluno">
             <input type="text" name="endereco" id="endereco" placeholder="Endereço">
+            <input type="file" name="file" id="file">
             <button id="adicionarTarefa" type="submit">Adicionar</button>
         </form>
         <% } else {  %>  

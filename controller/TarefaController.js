@@ -10,13 +10,15 @@ const getAllTarefa = async (req, res) => {
     
 };
 
+
 const createTarefa = async (req, res) => {
     const tarefa = {
         tarefa: req.body.tarefa,
         cpf: req.body.cpf,
         matricula: req.body.matricula,
         rg:req.body.rg,
-        endereco: req.body.endereco
+        endereco: req.body.endereco,
+        file: req.body.file
     }
 
     if(!tarefa.tarefa){

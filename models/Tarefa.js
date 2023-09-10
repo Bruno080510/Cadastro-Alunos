@@ -23,6 +23,10 @@ const tarefaSchema = new Schema({
         type: String,
         require: true
     },
+    file:{
+        type: String,
+        require: true
+    },
     check: {
         type: Boolean,
         require: true,
