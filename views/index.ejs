@@ -1,38 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <title>To do list</title>
-</head>
 <body>
-    
-    <header>
-        <% if(message != ""){ %>
-        <div class="alert alert-<%= type %>" role="alert">
-            <p><%= message %></p>
-            <span>x</span>
-        </div>
-        <% } %>
-        <% if (task==null) { %>
-        <form action="/create" method="post" enctype="multipart/form-data">
-            <input class="form-control" type="text" name="tarefa" id="tarefa" placeholder="Nome do Aluno">
-            <input type="number" name="cpf" id="cpf" placeholder="CPF do aluno">
-            <input type="number" name="matricula" id="matricula" placeholder="Número da matricula">
-            <input type="number" name="rg" id="rg" placeholder="RG do aluno">
-            <input type="text" name="endereco" id="endereco" placeholder="Endereço">
-            <input type="file" name="file" id="file">
-            <button id="adicionarTarefa" type="submit">Adicionar</button>
+    <% if (task==null) { %>
+        <form class=" flex flex-row p-3" action="/create" method="post" enctype="multipart/form-data">
+            <div class="pb-3">
+                <input class="form-control" type="text" name="tarefa" id="tarefa" placeholder="Nome do Aluno">
+            </div>
+            <div class="pb-3">                
+                <input class="form-control" type="number" name="cpf" id="cpf" placeholder="CPF do aluno">
+            </div>
+            <div class="pb-3">                
+                <input class="form-control" type="number" name="matricula" id="matricula" placeholder="Número da matricula">
+            </div>
+            <div class="pb-3">                
+                <input class="form-control" type="number" name="rg" id="rg" placeholder="RG do aluno">
+            </div>
+            <div class="pb-3">                
+                <input class="form-control" type="text" name="endereco" id="endereco" placeholder="Endereço">
+            </div>
+            <div class="pb-3">                
+                <input class="form-control" type="file" name="file" id="file">
+            </div>
+            <button class="btn btn-dark" id="adicionarTarefa" type="submit">Adicionar</button>
         </form>
         <% } else {  %>  
-        <form action="/updateOne/<%= task._id %>" method="post">
-            <input type="text" name="tarefa" id="tarefa" value="<%= task.tarefa %>">
-            <input type="number" name="cpf" id="cpf" value="<%= task.cpf %>">
-            <input type="number" name="matricula" id="matricula" value="<%= task.matricula%>">
-            <input type="number" name="rg" id="rg" value="<%= task.rg%>">
-            <input type="endereco" name="endereco" id="endereco" value="<%= task.endereco %>">
-            <button id="adicionarTarefa" type="submit">Atualizar</button>
+        <form class=" flex flex-row p-3" action="/updateOne/<%= task._id %>" method="post">
+            <div class="pb-3">                
+                <input class="form-control" type="text" name="tarefa" id="tarefa" value="<%= task.tarefa %>">
+            </div>
+            <div class="pb-3">                
+                <input class="form-control" type="number" name="cpf" id="cpf" value="<%= task.cpf %>">
+            </div>
+            <div class="pb-3">                
+                <input class="form-control" type="number" name="matricula" id="matricula" value="<%= task.matricula%>">
+            </div>
+            <div class="pb-3">                
+                <input class="form-control" type="number" name="rg" id="rg" value="<%= task.rg%>">
+            </div>
+            <div class="pb-3">                
+                <input class="form-control" type="endereco" name="endereco" id="endereco" value="<%= task.endereco %>">
+            </div>
+            <button class="btn btn-success" id="adicionarTarefa" type="submit">Atualizar</button>
         </form>
         <%  } %>
     </header>
@@ -63,7 +69,5 @@
     </section>
    <% } %>
 
-   <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
 </body>
-</html>
+       

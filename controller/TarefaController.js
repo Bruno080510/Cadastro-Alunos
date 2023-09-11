@@ -8,7 +8,7 @@ const getAllTarefa = async (req, res) => {
     try{
         setTimeout(()=>{
             message = ""
-        },2000)
+        },3000)
         const tasksList = await Tarefa.find()
         return res.render("index", {
             tasksList,
