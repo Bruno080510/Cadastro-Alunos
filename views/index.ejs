@@ -6,8 +6,8 @@
             <h2>Confirmação</h2>
             <hr>
             <p>Deseja realmente apagar este cadastro: <%= taskDelete.tarefa %>?</p>
-            <a href="/">não</a>
-            <a href="/deleteOne/<%= taskDelete._id %>">sim</a>
+            <a href="/" class="btn btn-danger">não</a>
+            <a href="/deleteOne/<%= taskDelete._id %>" class="btn btn-primary">sim</a>
           </div>
         </div>
       <% } %>
