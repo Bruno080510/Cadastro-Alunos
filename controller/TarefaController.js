@@ -38,6 +38,8 @@ const createTarefa = async (req, res) => {
         type = "danger";
         return res.redirect("/");
     }
+    console.log(file.path);
+    console.log(file.path.split("public\\"));
     const tarefa = {
         tarefa: req.body.tarefa,
         cpf: req.body.cpf,
