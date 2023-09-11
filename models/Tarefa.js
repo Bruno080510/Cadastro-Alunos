@@ -1,36 +1,36 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema;
 
 const tarefaSchema = new Schema({
     tarefa: {
         type: String,
         require: true,
     },
-    cpf:{
+    cpf: {
         type: Number,
-        require:true
+        require: true,
     },
-    matricula:{
+    matricula: {
         type: Number,
-        require:true
+        require: true,
     },
-    rg:{
-        type:Number,
-        require:true
+    rg: {
+        type: Number,
+        require: true,
     },
-    endereco:{
+    endereco: {
         type: String,
-        require: true
+        require: true,
     },
-    file:{
+    file: {
         type: String,
-        require: true
+        require: true,
     },
     check: {
         type: Boolean,
         require: true,
     },
-})
+});
 
-module.exports = mongoose.model("Task", tarefaSchema)
+module.exports = mongoose.model("Task", tarefaSchema);
