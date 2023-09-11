@@ -1,4 +1,16 @@
 <body>
+    <% if (taskDelete != null) { %>
+        <div id="modal-container">
+          <div id="modal-content">
+            <a href="/" class="close">x</a>
+            <h2>Confirmação</h2>
+            <hr>
+            <p>Deseja realmente apagar este cadastro: <%= taskDelete.tarefa %>?</p>
+            <a href="/">não</a>
+            <a href="/deleteOne/<%= taskDelete._id %>">sim</a>
+          </div>
+        </div>
+      <% } %>
     <% if (task==null) { %>
         <form class=" flex flex-row p-3" action="/create" method="post" enctype="multipart/form-data">
             <div class="pb-3">
@@ -77,17 +89,6 @@
                   
                 
 
-                <% if(taskDelete !=null){ %>
-                    <section id="modal">
-                        <div id="card">
-                            <a href="/">x</a>
-                            <h2>Confirmação</h2>
-                            <hr>
-                            <p>Deseja realmente apagar esse cadastro: <%= taskDelete.tarefa%>?</p>
-                            <a href="/">não</a>
-                            <a href="/deleteOne/<%= taskDelete._id %>">sim</a>
-                        </div>
-                    </section>
-                    <% } %>
+               
 
 </body>
